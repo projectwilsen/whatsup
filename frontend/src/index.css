@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body {
+  @apply bg-gradient-to-br from-blue-950 via-black to-violet-950 min-h-screen;
+} */
+body {
+  @apply bg-black min-h-screen;
+}
