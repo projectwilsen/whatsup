@@ -74,5 +74,6 @@ for i in range(len(this_week_papers)):
         result['published_date'] = pd.Timestamp(this_week_papers[i].published).strftime("%Y%m%d_%H%M%S")
         
         supabase_client.table('research_papers').upsert(result,  returning="minimal", on_conflict="title").execute()
+        print(f"Success to process {this_week_papers[i].title}")
     except:
         print(f"Fail to process {this_week_papers[i].title}")
