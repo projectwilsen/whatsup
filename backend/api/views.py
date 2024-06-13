@@ -29,7 +29,7 @@ class SemanticSearchView(APIView):
             
             embeddings = embeddings_model.embed_query(text)
 
-            params = {'query_embedding':embeddings, 'similarity_threshold':0.7,'match_count':6}
+            params = {'query_embedding':embeddings, 'similarity_threshold':0.75,'match_count':6}
             data = supabase.rpc('vector_search', params).execute()
             
             return Response(data, status=status.HTTP_200_OK)

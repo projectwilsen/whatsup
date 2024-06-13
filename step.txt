@@ -1,9 +1,12 @@
+1. Create .github folder
+2. Create workflows folder inside of .github
+3. Create actions.yaml file inside of workflows folder
+4. Paste this
+
 name: ETL for Whatsup Project
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '0 18 */3 * *' 
   push:
     branches:
       - main
@@ -35,7 +38,11 @@ jobs:
         run: |
           cd etl
           python etl.py
-          
+
+5. Set up environment variable in github if you have
+
+6. In case you need to save file in github then you need to do git push, in my experience, i need this to save my backup data, and logging
+
       # - name: commit files
       #   run: |
       #     git config --local user.email "action@github.com"
@@ -48,3 +55,7 @@ jobs:
       #   with:
       #     github_token: ${{ secrets.GITHUB_TOKEN }}
       #     branch: main 
+
+7. Add scheduler
+  # schedule:
+  #   - cron: '0 0 * * 1' 
