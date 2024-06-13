@@ -77,3 +77,23 @@ for i in range(len(this_week_papers)):
         print(f"Success to process {this_week_papers[i].title}")
     except:
         print(f"Fail to process {this_week_papers[i].title}")
+
+import datetime
+
+# Define the log file name
+log_file = 'log.txt'
+
+# Get the current date and time
+current_datetime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+# Define the success message
+success_message = 'Success'
+
+# Create the log entry
+log_entry = f'{current_datetime} - {success_message}\n'
+
+# Write the log entry to the file
+with open(log_file, 'a') as file:
+    file.write(log_entry)
+
+print('Log entry added successfully.')
